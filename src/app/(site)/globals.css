@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/*
+ * Dark-only for now: warm and woody, like the store at night. Every colour is a
+ * token, so a light theme is a matter of redefining these under
+ * :root[data-theme="light"] later.
+ */
+:root {
+  /* Taken from the logo: dark wood, cream felt, the orange and navy caps. */
+  --background: #17110b;
+  --surface: #211810;
+  --surface-raised: #2c2016;
+  --border: #3d2e20;
+  --foreground: #f3e6cf;
+  --muted: #bfa98a;
+
+  /* Cap orange: primary actions, highlights. */
+  --ember: #e8762c;
+  --ember-soft: #e8762c26;
+  /* Shirt navy: secondary accents. */
+  --arcane: #4a6f9c;
+  /* The logo's cream ground, for framing the logo itself. */
+  --cream: #eace9e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-arcane: var(--arcane);
+  --color-cream: var(--cream);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-geologica);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Faint felt-table grain behind the hero. */
+.bg-felt {
+  background-image:
+    radial-gradient(ellipse 60% 50% at 70% 0%, #e8762c24, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, #4a6f9c2e, transparent 70%);
+}
